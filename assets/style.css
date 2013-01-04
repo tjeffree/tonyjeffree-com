@@ -1,0 +1,197 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ *
+ * Detailed information about this CSS: h5bp.com/css
+ *
+ * ==|== normalize ==========================================================
+ */
+
+
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+header, nav, section { display: block; }
+[hidden] { display: none; }
+
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html { font-family: sans-serif; color: #222; }
+body { margin: 0; font-size: 1em; line-height: 1.4; background-color: #272822; }
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ */
+
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a, a:visited { color: inherit; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+
+b, strong { font-weight: bold; }
+
+/* Redeclare monospace font family: h5bp.com/j */
+pre, code, {
+	font-family: monospace, serif;
+	_font-family: 'courier new', monospace;
+	font-size: 0.7em;
+}
+
+/* Improve readability of pre-formatted text in all browsers */
+pre {
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	margin-left: 10px;
+}
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/* =============================================================================
+   Chrome Frame Prompt
+   ========================================================================== */
+
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  pre { border: 1px solid #999; page-break-inside: avoid; }
+  img { page-break-inside: avoid, max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+
+
+/* ------------ */
+
+h1 {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  color: #333;
+  z-index: 1000;
+  height: 100%;
+  background-color: #f3f3f3;
+}
+nav h2 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+}
+nav ul {
+  list-style: none;
+  font-size: 0.9em;
+}
+nav li {
+  margin: 8px 0;
+}
+nav a,
+nav a:visited,
+nav a:active {
+  display: block;
+  line-height: 1.5em;
+  color: #333;
+  border-left: 2px solid #f3f3f3;
+  padding-left: 5px;
+}
+
+nav a:hover {
+  border-color: #333;
+}
+
+#phpscroll {
+  z-index: 10;
+  position: relative;
+  margin-left: 20px;
+  overflow: hidden;
+}
+#phpscroll pre {
+  margin: 0;
+  line-height: 16px;
+}
+
+#highlight {
+  background-color: #32322A;
+  height: 16px;
+  width: 100%;
+  position: absolute;
+  display: none;
+  left: 0;
+  z-index: 1;
+}
+#highlight.less {
+  background-color: #424439;
+}
+
+#tweetto {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1001;
+}
+
+.render-item{
+	border-bottom:1px solid #ccc;
+	padding-bottom:5px
+}

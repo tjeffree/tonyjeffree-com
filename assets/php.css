@@ -1,0 +1,39 @@
+
+.php {
+	color: #F8F8F2;
+}
+
+.php-keyword {
+	color: #F92672;
+}
+
+/* function, array, class, custom classes, built in classes, etc */
+.php-construct {
+	color: #66D9EF;
+}
+
+/* constants, boolean, abstract functions */
+.php-const {
+	color: #AE81FF;
+}
+
+/* variable names and class names */
+.php-var {
+	color: #F8F8F2;
+}
+
+.php-string,
+.php-string .php-keyword {
+	color: #E6DB74;
+}
+
+.php-comment,
+.php-comment .php-keyword {
+	color: #75715E;
+}
+
+/* method and extend/implement */
+.php-method {
+	color: #A6E22E;
+}
+
