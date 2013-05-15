@@ -2,7 +2,8 @@
 <!--
 This is the HTML source for my web page, thanks for looking! Source code does not get enough credit.
 -->
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<html lang="en">
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
 <title>Tony Jeffree - shex.co.uk</title>
