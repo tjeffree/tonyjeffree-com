@@ -195,3 +195,28 @@ nav a:hover {
 	border-bottom:1px solid #ccc;
 	padding-bottom:5px
 }
+
+@media (orientation:portrait) {
+    nav {
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+    nav h2,
+    nav li {
+        display: none;
+        text-align: center;
+    }
+    .render-item {
+        border-bottom: 0;
+    }
+    #render-it {
+        display: block;
+    }
+    #tweetto {
+        display: none;
+    }
+    #phpscroll {
+        font-size: 80%;
+    }
+}

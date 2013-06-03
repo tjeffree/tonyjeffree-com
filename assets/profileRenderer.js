@@ -1,6 +1,7 @@
 // This is the only object we're polluting the global scope with
 function profileRenderer(){}
 (function(){
+    "use strict";
 
     // Private
     var 
@@ -62,15 +63,22 @@ function profileRenderer(){}
                 desc: 'Support Engineer Role'
             }
         ],
+        
+        w           = window,
+        d           = document,
+        e           = d.documentElement,
+        g           = d.getElementsByTagName('body')[0],
+        
+        $doc        = $(d),
+        
+        winHeight   = w.innerHeight|| e.clientHeight|| g.clientHeight,
 
-        $win        = $(window),
-        $doc        = $(document),
-        winHeight   = $win.height(),
-
-        $phpblock   = null, // php source container
+        phpblock    = null, // php source container
+        
         $highlight  = null, // row highlight
-        $nav        = null,
+        $nav        = null, // navigation
         $phpscroll  = null, // container for the php output
+        
         llen        = null, // count of lines
         php         = null; // will hold the php source
 
@@ -78,16 +86,19 @@ function profileRenderer(){}
         this.init = function() {
 
             // jQuery up some objects we'll need later
-            $phpblock   = $('#phpcode');
             $highlight  = $('#highlight');
             $nav        = $('nav ul');
             $phpscroll  = $('#phpscroll');
+            
+            phpblock    = d.getElementById('phpcode');
 
             // The source php code
-            php         = $phpblock.html();
+            php         = phpblock.innerHTML;
             
             // Catch any change in the window size
-            $win.resize(function(){winHeight=$win.height();})
+            w.addEventListener('resize', function() {
+                winHeight = w.innerHeight|| e.clientHeight|| g.clientHeight;
+            }, false);
 
             createNav();
             doSearches();
@@ -97,18 +108,20 @@ function profileRenderer(){}
 
         function createNav() {
             // Find location of anchors and populate the navigation
-            $.each(links, function(i,l){
+//            $.each(links, function(i,l){
+            for (var x=0, linkLen = links.length;x<linkLen;x++) {
                 
-                var strLocation = php.indexOf(l.search),
+                var l           = links[x],
+                    strLocation = php.indexOf(l.search),
                     newStr      = php.substring(0,strLocation),
                     lineNo      = newStr.split('\n').length -1;
 
-                $nav.append('<li><a href="#" data-lineno="' + (lineNo+1) + '">'+l.desc+'</a></li>');
+                $nav.append('<li><a href="#" data-lineno="' + (lineNo) + '">'+l.desc+'</a></li>');
 
-            });
+            };
 
             // Attach our click handlers to our navigation
-            $nav.delegate('a','click', function(){
+            $nav.on('click', 'a', function(){
                 var lineno   = $(this).data('lineno'),
                     line     = $('#l'+lineno);
 
@@ -145,7 +158,7 @@ function profileRenderer(){}
             var mailExp = /(([a-z0-9*._+]){1,}\@(([a-z0-9]+[-]?){1,}[a-z0-9]+\.){1,}([a-z]{2,4}|museum)(?![\w\s?&.\/;#~%"=-]*>))/g;
             php = php.replace(mailExp, '<a href="mailto:$1">$1</a>');
             
-            $phpblock.html(php);
+            phpblock.innerHTML = php;
         }
 
         // Output the newly styled PHP code
@@ -153,14 +166,15 @@ function profileRenderer(){}
             var lines   = php.split('\n'),
                 x,
 				output	= [];
-            
-            llen    = lines.length;
 
+            llen = lines.length;
+            
             for (x=0;x<llen;x++) {
                 output.push('<pre class="row" id="l'+x+'">' + (lines[x].length==0 ? '&nbsp;' : lines[x]) + '</pre>');
             }
-
-            $phpblock.hide();
+            
+            // remove the php source
+            g.removeChild(phpblock);
 
             $phpscroll.append(output).css({marginTop: winHeight/2, marginBottom: winHeight/2});
 
@@ -186,7 +200,7 @@ function profileRenderer(){}
             function onScroll() {
 
                 var thisRow, tmp, newScroll, x=0,
-                    docHeight = $doc.height();
+                    docHeight = g.scrollHeight || g.offsetHeight;
                 
                 // Clear any existing scroll timeout
                 clearTimeout(hlTO);
@@ -198,7 +212,7 @@ function profileRenderer(){}
                 }, 200);
 
                 // Get new scroll distance
-                newScroll   = $doc.scrollTop();
+                newScroll   = g.scrollTop;
 
                 // Calculate the row in the middle of the viewport
                 thisRow     = parseInt((newScroll / (docHeight-winHeight)) * llen);
@@ -225,14 +239,12 @@ function profileRenderer(){}
             }
 
             // Catch the window scroll
-            $win.scroll(function() {
+            w.addEventListener('scroll', function() {
                 onScroll();
-            });
-
-            // If we haven't already scrolled - fire off an initial scroll event
-            if ($doc.scrollTop()==0) {
-                $win.trigger('scroll');
-            }
+            }, false);
+            
+            // Kick this off on the initial load to get things moving
+            onScroll();
 
         }
 
