@@ -109,6 +109,7 @@ class TonyJeffree extends Web_Developer {
     const EMAIL     = 'mail@tonyjeffree.com';
     const TWITTER   = '<a href="//twitter.com/#tjeffree">@tjeffree</a>';
     const LINKEDIN  = '<a href="//uk.linkedin.com/in/tonyjeffree">tonyjeffree</a>';
+    const GITHUB	= '<a href="https://github.com/tjeffree">tjeffree</a>';
 
     public function __construct() {
         
