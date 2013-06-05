@@ -69,9 +69,10 @@ class Position_Web_Developer extends Position {
         'Java online smart card reader - reading EU Driver Cards',
         'slippy map using Openlayers and OpenStreetMap & Bing Maps',
         'general notification application for web services - Adobe Air / Flex',
-        'desktop application to notify of PHP errors on live servers - Adobe Air / Javascript, HTML',
-	'SVN version control',
-	'bug, feature and enhancement tracking application'
+        'web application to notify of PHP errors on live servers - WebSockets / Redis pubsub / Javascript / HTML',
+        'SVN version control',
+        'bug, feature and enhancement tracking application',
+        'Android App utilising my core skills with PhoneGap/Cordova/AngularJS'
     );
 
 }
@@ -141,14 +142,18 @@ class TonyJeffree extends Web_Developer {
         $this->skills[]                = 'Java';
         $this->skills[]                = 'C# (some!)';
         $this->skills[]                = 'DNS';
+        $this->skills[]                = 'AngularJS';
+        $this->skills[]                = 'PhoneGap / Cordova';
+        $this->skills[]                = 'Android Deployment';
 
     }
 
     protected function listWebsites() {
         
-        $this->websites[]             = 'http://www.tachomaster.co.uk';
-        $this->websites[]             = 'http://www.falcontracking.co.uk';
-        $this->websites[]             = 'http://shex.co.uk/wordgame/';
+        $this->websites[]             = array('Tachomaster', 'http://www.tachomaster.co.uk');
+        $this->websites[]             = array('Falcon', 'http://www.falcontracking.co.uk');
+        $this->websites[]             = array('Word Game', 'http://shex.co.uk/wordgame/');
+        $this->websites[]             = array('Tachomaster Worker App (Google Play)', 'https://play.google.com/store/apps/details?id=com.RoadTech.Tachomaster');
 
     }
 

@@ -30,6 +30,7 @@ $dev = new TonyJeffree;
 	<h2><a href="mailto:<?=TonyJeffree::EMAIL?>"><?=TonyJeffree::EMAIL?></a></h2>
 	<h2>Twitter: <?=TonyJeffree::TWITTER?></h2>
 	<h2>LinkedIn: <?=TonyJeffree::LINKEDIN?></h2>
+	<h2>GitHub: <?=TonyJeffree::GITHUB?></h2>
 </div>
 
 <h2>Core Skills</h2>
@@ -63,7 +64,7 @@ foreach ($dev->skills as $skill) {
 <ul>
 	<?php
 	foreach ($dev->websites as $w) {
-		?><li><a href="<?=$w?>" target="_blank"><?=$w?></a></li>
+		?><li><a href="<?=$w[1]?>" target="_blank"><?=$w[0]?></a></li>
 		<?php
 	}
 	?>
