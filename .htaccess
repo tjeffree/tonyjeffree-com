@@ -1,0 +1,9 @@
+
+<IfModule mod_rewrite.c>
+
+RewriteEngine on
+
+RewriteRule ^render/?$ run.php [NC,L]
+
+</IfModule>
+
