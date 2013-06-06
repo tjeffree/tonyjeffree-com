@@ -20,3 +20,15 @@ text-align: center;
 font-size: 72px;
 line-height: 1;
 }
+li li {
+	margin-bottom: 10px;
+}
+
+@media (orientation:portrait) {
+	.container-narrow {
+		max-width: 90%;
+	}
+	.jumbotron {
+		margin-top: 0;
+	}
+}
