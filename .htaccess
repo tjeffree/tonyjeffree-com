@@ -4,6 +4,7 @@
 RewriteEngine on
 
 RewriteRule ^render/?$ run.php [NC,L]
+RewriteRule ^\+$ https://plus.google.com/117163653075790353637/ [R,L,B]
 
 </IfModule>
 
