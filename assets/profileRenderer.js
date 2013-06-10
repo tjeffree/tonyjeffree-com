@@ -15,13 +15,13 @@ function profileRenderer(){}
             'private',
             'const ',
             'extends',
+            'class ',
             ' = ',
             'new',
             '-&gt;'
         ],
 
         construct = [
-            'class ',
             'function',
             '__construct',
             'array',
