@@ -4,13 +4,14 @@ This is the HTML source for my web page, thanks for looking! Source code does no
 -->
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-<link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
 <title>Tony Jeffree</title>
 <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="/assets/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 <link href="/run.css" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 </head>
 <body>
 <?php
