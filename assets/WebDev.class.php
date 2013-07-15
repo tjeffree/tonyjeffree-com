@@ -143,9 +143,9 @@ class TonyJeffree extends Web_Developer {
         $now = new DateTime('now');
 		$fmt = $now->format('Y-m-d');
 
-        $this->exp['PHP']              = $this->date_diff('2003-01-01', $fmt);    // 9 years
-        $this->exp['Javascript']       = $this->date_diff('2001-01-01', $fmt);    // 12 years
-        $this->exp['HTML']             = $this->date_diff('2001-01-01', $fmt);    // 12 years
+        $this->exp['PHP']              = $this->date_diff('2003-01-01', $fmt);
+        $this->exp['Javascript']       = $this->date_diff('2001-01-01', $fmt);
+        $this->exp['HTML']             = $this->date_diff('2001-01-01', $fmt);
 
     }
 

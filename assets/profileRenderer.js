@@ -69,8 +69,6 @@ function profileRenderer(){}
         e           = d.documentElement,
         g           = d.getElementsByTagName('body')[0],
         
-        $doc        = $(d),
-        
         winHeight   = w.innerHeight|| e.clientHeight|| g.clientHeight,
 
         phpblock    = null, // php source container
@@ -109,20 +107,22 @@ function profileRenderer(){}
         function createNav() {
             // Find location of anchors and populate the navigation
 //            $.each(links, function(i,l){
-            for (var x=0, linkLen = links.length;x<linkLen;x++) {
+            for (var x=0, html = "", linkLen = links.length;x<linkLen;x++) {
                 
                 var l           = links[x],
                     strLocation = php.indexOf(l.search),
                     newStr      = php.substring(0,strLocation),
                     lineNo      = newStr.split('\n').length -1;
 
-                $nav.append('<li><a href="#" data-lineno="' + (lineNo) + '">'+l.desc+'</a></li>');
+                html += '<li><a href="#" data-lineno="' + (lineNo) + '">'+l.desc+'</a></li>';
 
             };
+            
+            $nav.append(html);
 
             // Attach our click handlers to our navigation
             $nav.on('click', 'a', function(){
-                var lineno   = $(this).data('lineno'),
+                var lineno   = this.getAttribute('data-lineno'),
                     line     = $('#l'+lineno);
 
                $('html,body').animate({scrollTop: line.offset().top - (winHeight/2)}, 1000);
@@ -198,12 +198,12 @@ function profileRenderer(){}
                         .css({opacity: opac[opacLen-1]});
 
             function onScroll() {
-
-                var thisRow, tmp, newScroll, x=0,
-                    docHeight = g.scrollHeight || g.offsetHeight;
                 
                 // Clear any existing scroll timeout
                 clearTimeout(hlTO);
+
+                var thisRow, tmp, newScroll, x=0,
+                    docHeight = g.scrollHeight || g.offsetHeight;
                 
                 // Set a new timeout
                 hlTO = setTimeout(function() {
