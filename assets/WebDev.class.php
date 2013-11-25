@@ -75,7 +75,7 @@ class Position_Web_Developer extends Position {
         'general notification application for web services - Adobe Air / Flex',
         'SVN version control',
         'bug, feature and enhancement tracking application',
-        'Android App utilising my core skills with PhoneGap/Cordova/AngularJS',
+        'Android and iPhone/iPad App utilising my core skills with PhoneGap/Cordova/AngularJS',
         'Java J2ME mobile phone application for recording working time'
     );
 
@@ -144,9 +144,9 @@ class TonyJeffree extends Web_Developer {
         $now = new DateTime('now');
 		$fmt = $now->format('Y-m-d');
 
-        $this->exp['PHP']              = $this->date_diff('2003-01-01', $fmt);
         $this->exp['Javascript']       = $this->date_diff('2001-01-01', $fmt);
         $this->exp['HTML']             = $this->date_diff('2001-01-01', $fmt);
+        $this->exp['PHP']              = $this->date_diff('2003-01-01', $fmt);
 
     }
 
