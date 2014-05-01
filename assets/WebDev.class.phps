@@ -158,7 +158,8 @@ class TonyJeffree extends Web_Developer {
         $this->websites[]             = array('Falcon', 'http://www.falcontracking.co.uk');
         $this->websites[]             = array('Road Tech', 'http://www.roadtech.co.uk');
         $this->websites[]             = array('Word Game', 'http://shex.co.uk/wordgame/');
-        $this->websites[]             = array('Tachomaster Worker App (Google Play linked, also on iOS)', 'https://play.google.com/store/apps/details?id=com.RoadTech.Tachomaster');
+        $this->websites[]             = array('Tachomaster Worker App (Google Play linked, also on iOS)', 
+                                          'https://play.google.com/store/apps/details?id=com.RoadTech.Tachomaster');
 
     }
 
