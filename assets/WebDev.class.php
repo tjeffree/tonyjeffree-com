@@ -72,7 +72,7 @@ class Position_Web_Developer extends Position {
         'email ticketing system for support department',
         'Google Analytics across all web applications',
         'Java online smart card reader - reading EU Driver Cards',
-        'slippy map using Openlayers and OpenStreetMap & Bing Maps',
+        'vehicle tracking utilising Google Maps V3 API',
         'general notification application for web services - Adobe Air / Flex',
         'SVN version control',
         'bug, feature and enhancement tracking application',

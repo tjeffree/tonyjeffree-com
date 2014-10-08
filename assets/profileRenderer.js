@@ -112,7 +112,7 @@ function profileRenderer(){}
                 var l           = links[x],
                     strLocation = php.indexOf(l.search),
                     newStr      = php.substring(0,strLocation),
-                    lineNo      = newStr.split('\n').length -1;
+                    lineNo      = newStr.split('\n').length;
 
                 html += '<li><a href="#" data-lineno="' + (lineNo) + '">'+l.desc+'</a></li>';
 
